@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+        <div class="col-md-4"></div>
+	    <div class="col-md-4">
+            <h2>To Do List</h2>
+		    <form name="checkListForm">
+			    <input type="text" class="form-control add-todo" name="checkListItem" placeholder="Add Item..." [(ngModel)]="task"/>
+		    </form>
+	    	 <button type="button" id="add" class="btn btn-info" (click)="addTodo(task)">Add</button>
+		    <br/><br/>
+         <!--   <div class="panel panel-primary" *ngFor="let task of tasks" (click)="deleteTodo(task)">{{task.title}}</div> -->
+                <ul class="list-group" *ngFor="let task of tasks">
+                    <li class="list-group-item" (click)="deleteTodo(task)">{{task.title}}</li>
+                </ul>
+        </div>
+        <div class="col-md-4"></div>
+	</div>
+</div>
